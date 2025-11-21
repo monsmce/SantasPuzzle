@@ -1,0 +1,28 @@
+body {
+    font-family: "Brush Script MT", cursive;
+    text-align: center;
+    color: rgb(13, 110, 190);
+    background-image:url('IMG/snow_background.jpg');
+    background-size: cover;/* Image covers the entire screen */
+  background-repeat: no-repeat; /* Prevents image repetition */
+  background-attachment: fixed;/* Background doesn't scroll with the text */
+    margin: 0;
+    padding: 0;
+    
+}
+
+#board{
+    width: 420px;/*The board is 420 pixels wide*/
+    height: 420px;/*The board is 420 pixels high*/
+    border: 8px solid rgb(13, 110, 190); /*The board has a 8 pixel solid border*/
+    margin: 20px auto; /*Centers the board on the page with 20 pixels of margin on top and bottom*/
+    display: flex; /*The puzzle pieces line up in a row and automatically arrange like a grid*/
+    flex-wrap: wrap; /*Makes the puzzle pieces move to the next line 
+       when there is no space*/
+}
+
+#board img{
+    width: 138px; /*Each puzzle piece is 138 pixels wide*/
+    height: 138px; /*Each puzzle piece is 138 pixels high*/
+    border: 1px solid #63abe3; /*Each puzzle piece has a 1 pixel solid border with color #63abe3*/
+}
