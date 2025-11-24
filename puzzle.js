@@ -8,9 +8,7 @@ var otherTile; //blank tile
 var turns = 0;
 
 //this is the order we are placing the images in the puzzle box, we can choose where the peaces are going to be placed 
-
-//var imgOrder = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var imgOrder = ["1", "2", "8", "5", "4", "6", "7", "9", "3"];
+var imgOrder = ["7", "5", "3", "1", "6", "4", "2", "9", "8"];
 
 window.onload = function() //this function makes sure that the page finished loading first and then the function will run 
 {
@@ -106,4 +104,5 @@ function dragEnd()
         document.getElementById("turns").innerText = turns;
         }
 }
+
 
