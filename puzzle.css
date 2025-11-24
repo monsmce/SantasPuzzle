@@ -31,3 +31,6 @@ img[src$="IMG/image_part_003.jpg"]
 {
     opacity: 0;
 }
+h2{
+    text align: left;
+}
