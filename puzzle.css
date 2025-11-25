@@ -1,7 +1,7 @@
 body {
-    font-family: "Brush Script MT", cursive;
+    font-family: "Brush Script MT";
     text-align: center;
-    color: rgb(13, 110, 190);
+    color: black;
     background-image:url('IMG/snow_background.jpg');
     background-size: cover;/* Image covers the entire screen */
   background-repeat: no-repeat; /* Prevents image repetition */
@@ -34,6 +34,7 @@ img[src$="IMG/image_part_003.jpg"]
 
 
     
+
 
 
 
