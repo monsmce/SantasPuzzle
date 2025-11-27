@@ -31,7 +31,7 @@ header{
 .instructions {
     flex: 0 1 60em; /* 0 means it cant grow, 1 means it can shrink, 45em is the max width*/
     align-items: center;
-     margin: 1em 1.5em 0em 3em;
+     margin: 0.5em 1.5em 0em 3em;
      /*top and bottom, right and left*/
      font-size: 2.5rem;
     
@@ -65,6 +65,7 @@ img[src$="IMG/image_part_003.jpg"]
 
 
     
+
 
 
 
