@@ -1,21 +1,47 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Mountains+of+Christmas:wght@400;700&display=swap');
+
 body {
-    font-family: "Brush Script MT";
+    font-family: "Berkshire Swash", serif;
     text-align: center;
-    color: black;
     background-image:url('IMG/snow_background.jpg');
     background-size: cover;/* Image covers the entire screen */
-  background-repeat: no-repeat; /* Prevents image repetition */
-  background-attachment: fixed;/* Background doesn't scroll with the text */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    background-attachment: fixed;/* Background doesn't scroll with the text */
     margin: 0;
-    padding: 0;
+    padding: 0; 
     
+}
+
+h1 {
+    color: rgb(151, 44, 44);
+    font-size: 4rem;
+    margin-bottom: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.instructions {
+    flex: 0 1 60em; /* 0 means it cant grow, 1 means it can shrink, 45em is the max width*/
+    align-items: center;
+     margin: 0em 1.5em 0em 3em;
+     /*top and bottom, right and left*/
+     font-size: 2.5rem;
+    
+}
+
+.instructions p{
+    font-family: "Mountains of Christmas", serif;
+    color: rgb(0, 0, 0);
 }
 
 #board{
     width: 420px;/*The board is 420 pixels wide*/
     height: 420px;/*The board is 420 pixels high*/
     border: 8px solid rgb(13, 110, 190); /*The board has a 8 pixel solid border*/
-    margin: 20px auto; /*Centers the board on the page with 20 pixels of margin on top and bottom*/
+    margin: 2em 4em 0em 0em; /*top, right, bottom, left*/
     display: flex; /*The puzzle pieces line up in a row and automatically arrange like a grid*/
     flex-wrap: wrap; /*Makes the puzzle pieces move to the next line 
        when there is no space*/
