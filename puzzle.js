@@ -6,15 +6,34 @@ var currentTile;//Refernce the tile we click to switch with the blank tile
 var otherTile; //blank tile
 
 var turns = 0;
+var bestScore = null;
 
 //this is the order we are placing the images in the puzzle box, we can choose where the peaces are going to be placed 
-
 var imgOrder = ["7", "5", "3", "1", "6", "4", "2", "9", "8"];
+//var imgOrder = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 let emptyTileId = "0-2";
 
-window.onload = function() //this function makes sure that the page finished loading first and then the function will run 
+// Function to update displayed turns
+function updateTurns() 
 {
-    //we are placing the images from the previos Array
+    document.getElementById("turns").innerText = turns;
+}
+
+// Function to update displayed best score
+function updateBestScore() 
+{
+    document.getElementById("bestScore").innerText = bestScore !== null ? bestScore : "-";
+}
+
+function resetPuzzle() 
+{
+    const board = document.getElementById("board");
+    board.innerHTML = "";
+    turns = 0;
+    updateTurns();
+
+    // Reset imgOrder (you can also shuffle here if you want)
+    imgOrder = ["7", "5", "3", "1", "6", "4", "2", "9", "8"];
 
     for (let r=0; r < rows; r++) //a for loop for rows
         {
@@ -35,6 +54,17 @@ window.onload = function() //this function makes sure that the page finished loa
         }
     }
 }
+
+window.onload = function() 
+{
+    resetPuzzle();
+    updateBestScore();
+
+    // Connect reset button
+    document.getElementById("resetBtn").addEventListener("click", resetPuzzle);
+}
+
+
 
 function moveTile() 
 {
@@ -60,5 +90,49 @@ function moveTile()
     emptyTileId = tileId;
 
     turns += 1;
-        document.getElementById("turns").innerText = turns;
+    updateTurns();
+
+    checkWin();
+}
+
+
+function checkWin() 
+{
+    const tiles = document.querySelectorAll("#board img");
+    let correct = true;
+
+    let index = 1;
+    for (let tile of tiles) 
+        {
+        const expected = "IMG/image_part_00" + index + ".jpg";
+        if (!tile.src.includes(expected)) 
+            {
+            correct = false;
+            break;
+        }
+        index++;
+    }
+
+    if (correct) {
+        // Update best score
+        if (bestScore === null || turns < bestScore) 
+            {
+            bestScore = turns;
+            updateBestScore();
+            }
+        showFullImage();
+    }
+}
+
+
+function showFullImage() 
+{
+    const board = document.getElementById("board");
+    board.innerHTML = ""; // remove all tiles
+
+    let img = document.createElement("img");
+    img.src = "IMG/SantasPuzzle.png"; // WRITE HERE your full picture
+    img.classList.add("full-image");
+
+    board.appendChild(img);
 }

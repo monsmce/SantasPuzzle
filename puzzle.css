@@ -28,7 +28,8 @@ header{
     display: flex;
 }
 
-.instructions {
+.instructions 
+{
     flex: 0 1 60em; /* 0 means it cant grow, 1 means it can shrink, 45em is the max width*/
     align-items: center;
      margin: 0.5em 1.5em 0em 3em;
@@ -37,7 +38,8 @@ header{
     
 }
 
-.instructions p{
+.instructions p
+{
     font-family: "Mountains of Christmas", serif;
     color: rgb(0, 0, 0);
 }
@@ -63,11 +65,58 @@ img[src$="IMG/image_part_003.jpg"]
     opacity: 0;
 }
 
+#board img.full-image
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; 
+}
 
-    
+#gameControls 
+{
+    display: flex;              /* puts children in one line */
+    justify-content: space-between; /* spreads items across container */
+    align-items: center;        /* vertical alignment */
+    width: 435px;               /* match board width */
+    margin-top: 25px;            /* space between board and controls */
+    gap: 10px;                   /* space between turns, best score, button */
+}
 
 
+#gameControls p 
+{
+    margin: 0;
+    padding: 6px 12px;             /* add padding like a button */
+    background-color: #0d6ebf;     
+    color: white;                   /* text color */
+    border-radius: 8px;             /* rounded corners */
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
 
+#gameControls p:hover
+{
+    background-color: #a00909; /* darker blue on hover */
+}
+
+#resetBtn {
+    padding: 8px 16px;
+    background-color: #0d6ebf; /* blue background */
+    color: white;
+    border: none;
+    border-radius: 8px;        /* rounded corners */
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s;
+}
+
+#resetBtn:hover 
+{
+    background-color: #a00909; /* darker blue on hover */
+}
 
 
 

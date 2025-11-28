@@ -5,32 +5,41 @@
     <meta charset="utf-8">
     <link href="puzzle.css" type="text/css" rel="stylesheet">
     <title>Santa's Puzzle</title>
-     <script src="puzzle.js"></script>
+    <script src="puzzle.js"></script>
 </head>
     
 <body>
-    
-<header>
-    <img id="logo"  height="100px" width="100px" src= "IMG/SantasPuzzleLogo.png" alt="Santa's Puzzle Logo">
-    <h1>Santa's Puzzle&nbsp;&nbsp;&nbsp;</h1>
-</header>
-    
-<div class = "container">  
-    <div class ="instructions">
-        <p>Santa's image has been dividen into tiles with one empty space at the right upper corner. 
+    <header>
+        <img id="logo"  height="100px" width="100px" src= "IMG/SantasPuzzleLogo.png" alt="Santa's Puzzle Logo">
+        <h1>Santa's Puzzle&nbsp;&nbsp;&nbsp;</h1>
+    </header>
+
+
+    <div class = "container">  
+        <div class ="instructions">
+            <p>Santa's image has been dividen into tiles with one empty space at the right upper corner. 
             Your goal is to rebuild the Santa and his presents by sliding the tiles into the empty space till you re organize it. 
             Only tiles that are next to the empty space can be moved. Try to complete it in the less turns possible!
-        </p>
-    </div>
+            </p>
+        </div>
 
-<div>
-            <div id="board">
+        <div>
+            <div id="board"></div><!-- The puzzle board where tiles will appear -->
+            <div id="gameControls">
+                <p id="Turns">Turns: <span id="turns">0</span></p><!-- The number of turns the player has used  & span - we use it for the number that changes (the 0 will change during the game)-->
+                <p id="BestScore">Best Score: <span id="bestScore">-</span></p>
+                <button id="resetBtn">Reset Puzzle</button>
             </div>
-            <!-- The puzzle board where tiles will appear -->
-            <h2>Turns: <span id="turns">0</span></h2>
-            <!-- The number of turns the player has used  & span - we use it for the number that changes (the 0 will change during the game)-->
-            </div>
-    </body>
+            
+        </div>
+    </div>
+</body>
+    
+
+    
+
+
+
 </html>
 
 
