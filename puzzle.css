@@ -71,6 +71,7 @@ img[src$="IMG/image_part_003.jpg"]
     height: 100%;
     object-fit: cover;
     display: block; 
+    animation: fadeIn 1s forwards;
 }
 
 #gameControls 
@@ -117,10 +118,5 @@ img[src$="IMG/image_part_003.jpg"]
 {
     background-color: #a00909; /* darker blue on hover */
 }
-
-
-
-
-
 
 

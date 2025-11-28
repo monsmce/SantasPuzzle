@@ -89,10 +89,6 @@ function moveTile()
 
     let emptyTile = document.getElementById(emptyTileId);
     
-    // Add animation to tile that moved
-    this.classList.add("moved");
-    setTimeout(() => this.classList.remove("moved"), 300);
-    
     // Swap images
     let tempSrc = this.src;
     this.src = emptyTile.src;
