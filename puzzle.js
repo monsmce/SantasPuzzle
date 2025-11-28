@@ -60,6 +60,13 @@ window.onload = function()
     resetPuzzle();
     updateBestScore();
 
+    // Load best score from localStorage
+    let savedBest = localStorage.getItem("bestScore");
+    if (savedBest !== null) {
+    bestScore = parseInt(savedBest);
+    updateBestScore();
+}
+
     // Connect reset button
     document.getElementById("resetBtn").addEventListener("click", resetPuzzle);
 }
@@ -78,9 +85,14 @@ function moveTile()
         (c === ec && Math.abs(r - er) === 1);
 
     if (!adjacent) return;
+    
 
     let emptyTile = document.getElementById(emptyTileId);
-
+    
+    // Add animation to tile that moved
+    this.classList.add("moved");
+    setTimeout(() => this.classList.remove("moved"), 300);
+    
     // Swap images
     let tempSrc = this.src;
     this.src = emptyTile.src;
@@ -119,6 +131,8 @@ function checkWin()
             {
             bestScore = turns;
             updateBestScore();
+            // Save best score in localStorage
+            localStorage.setItem("bestScore", bestScore);
             }
         showFullImage();
     }
